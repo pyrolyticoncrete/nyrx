@@ -185,18 +185,21 @@ Press F1 through F4 to switch between sources. Each source has its own landing v
 ## Features
 
 **Queue**
+
 Source-agnostic queue with management features like batch deletion, and move-to-front reorder.
 <p align="center">
   <img src="https://raw.githubusercontent.com/pyrolyticoncrete/nyrx/main/screenshots/h.jpg" alt="Playback queue modal" width="550">
 </p>
 
 **Downloads and Playback**
+
 Background downloads show speed and ETA with a live animation. Existing files are skipped automatically. Both download and playback widgets live in the sidebar: Soundcloud shows a braille waveform, Youtube displays progress and metadata, Radio shows the station name and live ICY titles, and TV displays episode details. Queue indicators sit below. When both downloads and playback are active, navigation keys let you move between widgets and cancel as needed.
 <p align="left">
   <img src="https://raw.githubusercontent.com/pyrolyticoncrete/nyrx/main/screenshots/i.gif" alt="Now-playing widget and download progress" width="700">
 </p>
 
 **Thumbnails and Info**
+
 Press z to view thumbnails, posters, and metadata. TV/Movies shows ratings, genres, and overview. Soundcloud shows track covers as such:
 
 > [!NOTE] 
@@ -209,12 +212,15 @@ Press z to view thumbnails, posters, and metadata. TV/Movies shows ratings, genr
 </p>
 
 **Command Palette**
+
 Press Ctrl+p to open the command palette. Source-specific commands in a searchable list: configure Lua plugin source, toggle plugin auto-updates, set download directory, sync liked tracks, and more.
 
 **Help**
+
 Press ? at any time for context-sensitive keybindings. The help changes based on which screen you are on. Focus indicators are unambiguous and the keybind hints update as you navigate around.
 
 **Watch Tracking**
+
 Every playback session is logged locally (mpv handles that), what you watched, how long, and whether you finished. This data stays on your machine.
 
 This tracking could potentially become a digital wellbeing feature, letting you generate a local report showing your weekly viewing and listening habits, from data already stored on your machine.
