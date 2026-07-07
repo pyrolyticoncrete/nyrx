@@ -1,0 +1,37 @@
+{
+  "collection": [
+    {
+      "id": 78901,
+      "title": "First Upload",
+      "duration": 240000,
+      "likes_count": 120,
+      "playback_count": 5000,
+      "reposts_count": 15,
+      "genre": "electronic",
+      "permalink_url": "https://soundcloud.com/test-artist/first-upload",
+      "artwork_url": "https://i1.sndcdn.com/artworks/test-upload1-large.jpg",
+      "user": {
+        "id": 123456,
+        "username": "Test Artist",
+        "permalink": "test-artist"
+      }
+    },
+    {
+      "id": 78902,
+      "title": "Second Upload",
+      "duration": 180000,
+      "likes_count": 80,
+      "playback_count": 3200,
+      "reposts_count": 8,
+      "genre": "ambient",
+      "permalink_url": "https://soundcloud.com/test-artist/second-upload",
+      "artwork_url": "https://i1.sndcdn.com/artworks/test-upload2-large.jpg",
+      "user": {
+        "id": 123456,
+        "username": "Test Artist",
+        "permalink": "test-artist"
+      }
+    }
+  ],
+  "next_href": ""
+}

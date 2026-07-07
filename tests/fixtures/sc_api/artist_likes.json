@@ -1,0 +1,39 @@
+{
+  "collection": [
+    {
+      "track": {
+        "id": 11111,
+        "title": "Liked Track One",
+        "duration": 200000,
+        "likes_count": 300,
+        "playback_count": 15000,
+        "permalink_url": "https://soundcloud.com/other-artist/liked-one",
+        "artwork_url": "https://i1.sndcdn.com/artworks/liked1-large.jpg",
+        "user": {
+          "id": 654321,
+          "username": "Other Artist",
+          "permalink": "other-artist"
+        }
+      },
+      "created_at": "2024-06-15T10:00:00Z"
+    },
+    {
+      "track": {
+        "id": 22222,
+        "title": "Liked Track Two",
+        "duration": 180000,
+        "likes_count": 150,
+        "playback_count": 8000,
+        "permalink_url": "https://soundcloud.com/another-artist/liked-two",
+        "artwork_url": "https://i1.sndcdn.com/artworks/liked2-large.jpg",
+        "user": {
+          "id": 987654,
+          "username": "Another Artist",
+          "permalink": "another-artist"
+        }
+      },
+      "created_at": "2024-06-10T08:30:00Z"
+    }
+  ],
+  "next_href": ""
+}

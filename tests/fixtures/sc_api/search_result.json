@@ -1,0 +1,32 @@
+[
+  {
+    "id": 55555,
+    "title": "Search Result One",
+    "uploader": "Search Artist",
+    "duration": 220,
+    "view_count": 7500,
+    "like_count": 400,
+    "thumbnails": [
+      {"url": "https://i1.sndcdn.com/thumb-search1.jpg", "preference": 0}
+    ],
+    "webpage_url": "https://soundcloud.com/search-artist/search-one",
+    "description": "A search result description",
+    "uploader_id": "777777",
+    "uploader_url": "https://soundcloud.com/search-artist"
+  },
+  {
+    "id": 66666,
+    "title": "Search Result Two",
+    "uploader": "Search Artist",
+    "duration": 180,
+    "view_count": 3000,
+    "like_count": 150,
+    "thumbnails": [
+      {"url": "https://i1.sndcdn.com/thumb-search2.jpg", "preference": 0}
+    ],
+    "webpage_url": "https://soundcloud.com/search-artist/search-two",
+    "description": "",
+    "uploader_id": "777777",
+    "uploader_url": "https://soundcloud.com/search-artist"
+  }
+]

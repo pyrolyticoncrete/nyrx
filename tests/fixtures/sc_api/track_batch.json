@@ -1,0 +1,34 @@
+[
+  {
+    "id": 33333,
+    "title": "Batch Track One",
+    "duration": 210000,
+    "likes_count": 250,
+    "playback_count": 12000,
+    "permalink_url": "https://soundcloud.com/batch-artist/batch-one",
+    "artwork_url": "https://i1.sndcdn.com/artworks/batch1-large.jpg",
+    "genre": "house",
+    "waveform_url": "https://wave1.sndcdn.com/batch1.json",
+    "user": {
+      "id": 555555,
+      "username": "Batch Artist",
+      "permalink": "batch-artist"
+    }
+  },
+  {
+    "id": 44444,
+    "title": "Batch Track Two",
+    "duration": 190000,
+    "likes_count": 180,
+    "playback_count": 9000,
+    "permalink_url": "https://soundcloud.com/batch-artist/batch-two",
+    "artwork_url": "https://i1.sndcdn.com/artworks/batch2-large.jpg",
+    "genre": "techno",
+    "waveform_url": "https://wave1.sndcdn.com/batch2.json",
+    "user": {
+      "id": 555555,
+      "username": "Batch Artist",
+      "permalink": "batch-artist"
+    }
+  }
+]

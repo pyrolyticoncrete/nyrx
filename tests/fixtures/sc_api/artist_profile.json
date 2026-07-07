@@ -1,0 +1,12 @@
+{
+  "id": 123456,
+  "username": "Test Artist",
+  "description": "A test artist profile for unit testing",
+  "city": "Berlin",
+  "country": "Germany",
+  "avatar_url": "https://i1.sndcdn.com/avatars/test-avatar-original.jpg",
+  "permalink": "test-artist",
+  "followers_count": 1500,
+  "track_count": 42,
+  "playlist_count": 3
+}

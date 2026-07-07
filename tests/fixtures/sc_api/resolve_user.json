@@ -1,0 +1,12 @@
+{
+  "id": 123456,
+  "username": "Resolved User",
+  "permalink": "resolved-user",
+  "description": "A resolved Soundcloud user profile",
+  "avatar_url": "https://i1.sndcdn.com/avatars/resolved-original.jpg",
+  "city": "London",
+  "country": "UK",
+  "followers_count": 500,
+  "track_count": 20,
+  "playlist_count": 1
+}

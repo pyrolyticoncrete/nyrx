@@ -1,0 +1,2486 @@
+/* SPDX-License-Identifier: AGPL-3.0-only */
+
+#main-content {
+    layout: horizontal;
+    height: 1fr;
+    background: #0f0f0f;
+}
+
+#results-wrapper {
+    height: 100%;
+    width: 1fr;
+    border: solid #0f0f0f;
+    background: #0f0f0f;
+    overflow: hidden;
+}
+
+#empty-state {
+    height: 1fr;
+    width: 100%;
+    background: #0f0f0f;
+    align: center middle;
+}
+#empty-state:focus {
+    background-tint: #a277ff 12%;
+}
+#empty-offline-banner,
+#sc-offline-banner,
+#tv-offline-banner {
+    height: 1;
+    color: #b0b0b0;
+    display: none;
+    content-align: center middle;
+}
+#empty-hint {
+    height: 3;
+    color: #b0b0b0;
+    content-align: left middle;
+    text-style: bold;
+}
+#empty-sep {
+    height: 1;
+    border-top: solid #2a2a2a;
+}
+#empty-heading {
+    height: 1;
+    color: white;
+    display: none;
+    content-align: left middle;
+}
+#empty-center {
+    width: 70;
+    height: auto;
+}
+#history-list {
+    height: auto;
+    max-height: 20;
+    scrollbar-size: 0 0;
+    overflow-y: scroll;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    margin-top: 1;
+}
+#history-list:focus {
+    background-tint: transparent;
+}
+#history-list > ListItem {
+    background: #0f0f0f;
+    padding: 0 0;
+    height: 1;
+}
+#history-list > ListItem > Static {
+    width: 100%;
+    padding: 0 0;
+    content-align: left middle;
+}
+#history-list > ListItem.-hl0,
+#sch-recent-list > ListItem.-hl0 {
+    color: #A277FF;
+    text-style: bold;
+}
+#history-list > ListItem.-hl1,
+#sch-recent-list > ListItem.-hl1 { color: #b0b0b0; }
+#history-list > ListItem.-hl2,
+#sch-recent-list > ListItem.-hl2 { color: #606060; }
+#history-list > ListItem.-hl3,
+#sch-recent-list > ListItem.-hl3 { color: #484848; }
+#history-list > ListItem.-hl4,
+#sch-recent-list > ListItem.-hl4 { color: #383838; }
+
+#results-focus, #sidebar-focus {
+    height: 1;
+    text-align: right;
+    padding: 0 1;
+}
+
+#results-list {
+    height: 1fr;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+
+#results-list:focus {
+    background-tint: transparent;
+}
+
+#results-list.hidden {
+    display: none;
+}
+
+#rs-switcher {
+    height: 1fr;
+    width: 100%;
+}
+#rs-loading {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#rs-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #A277FF;
+    text-align: center;
+}
+#rs-loading > Static {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#rs-empty {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#rs-empty > Static {
+    width: auto;
+    height: 1;
+    color: #505050;
+    text-align: center;
+}
+
+#sidebar {
+    width: 48;
+    min-width: 48;
+    max-width: 48;
+    height: 100%;
+    border: solid $surface;
+    background: $panel;
+    display: none;
+    layout: vertical;
+    overflow-y: auto;
+    scrollbar-size: 0 0;
+}
+
+Screen {
+    layers: base overlay;
+    background: #0f0f0f;
+}
+
+#main-content {
+    layer: base;
+}
+
+/* ── Mode Switcher overlay ─────────────────────────────────── */
+
+ModeSwitcher {
+    layer: overlay;
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+ModeSwitcher.visible {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+#chip-row {
+    width: auto;
+    height: auto;
+    background: #0f0f0f;
+    border: round $panel-lighten-1;
+    padding: 1 2;
+}
+
+.mode-chip {
+    width: auto;
+    height: 2;
+    min-width: 15;
+    content-align: center middle;
+    text-align: center;
+    padding: 0 2;
+    margin: 0 1;
+    background: #1e1e1e;
+    color: $text-muted;
+    border: none;
+}
+
+.mode-chip.active {
+    background: $primary;
+    color: black;
+    text-style: bold;
+}
+
+/* ── Terminal too small lock ───────────────────────────── */
+
+MinSizeModal {
+    background: #0f0f0f;
+    align: center middle;
+    overflow: hidden;
+}
+
+#min-size-box {
+    width: auto;
+    height: auto;
+    background: #0f0f0f;
+    border: round $panel-lighten-1;
+    padding: 1 2;
+    content-align: center middle;
+}
+
+#min-size-title {
+    width: auto;
+    height: 1;
+    text-align: center;
+    color: $text;
+}
+
+#min-size-current {
+    width: auto;
+    height: 1;
+    text-align: center;
+    color: $text;
+}
+
+#min-size-spacer,
+#min-size-spacer2 {
+    width: auto;
+    height: 1;
+}
+
+#min-size-req-label {
+    width: auto;
+    height: 1;
+    text-align: center;
+    color: $text;
+}
+
+#min-size-req {
+    width: auto;
+    height: 1;
+    text-align: center;
+    color: $text-muted;
+}
+
+#min-size-hint {
+    width: auto;
+    height: 1;
+    text-align: center;
+}
+
+
+/* ── Home / welcome screen ──────────────────────────────────── */
+
+HomeScreen {
+    background: #0f0f0f;
+    align: center middle;
+}
+
+#home-center {
+    width: 70;
+    height: auto;
+}
+
+#home-banner {
+    width: 100%;
+    height: auto;
+    color: #a277ff;
+    text-align: center;
+}
+
+#home-tagline {
+    width: 100%;
+    height:auto;
+    color: #6b6b76;
+    text-align: center;
+    margin: 1 0 0 0;
+}
+
+#home-sep {
+    width: 100%;
+    height: 1;
+    color: #2a2a2a;
+    text-align: center;
+    margin: 0 0 1 0;
+}
+
+#home-chips {
+    width: 100%;
+    height: auto;
+    align-horizontal: center;
+    padding: 0;
+}
+
+.home-chip {
+    width: auto;
+    height: 2;
+    min-width: 15;
+    text-align: center;
+    margin: 0 1 0 0;
+    background: #1e1e1e;
+    color: $text-muted;
+}
+
+.home-chip.active {
+    background: $primary;
+    color: black;
+    text-style: bold;
+}
+
+#home-bottom {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 2 1 0;
+    color: #4a4a52;
+}
+
+#qtoquit {
+    width: 1fr;
+    text-align: right;
+    color: #b0b0b0;
+}
+
+#home-topline {
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 0;
+}
+
+#home-offline-banner {
+    width: 1fr;
+    height: 1;
+    text-align: left;
+    display: none;
+    color: #b0b0b0;
+}
+
+#version-label {
+    width: 1fr;
+    text-align: right;
+}
+
+/* ── */
+
+BaseModal {
+    align: center middle;
+    background: #000000 60%;
+    scrollbar-size: 0 0;
+}
+
+Screen.wide #sidebar {
+    display: block;
+}
+
+#sidebar-context {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1;
+    padding: 0 1;
+}
+
+#np-youtube, #np-soundcloud, #np-radio, #np-tv {
+    width: 100%;
+    height: auto;
+    display: none;
+    margin-bottom: 1;
+}
+
+#sidebar-queue {
+    width: 100%;
+    height: auto;
+    color: $text-disabled;
+    margin-bottom: 1;
+}
+
+#download-widget {
+    width: 100%;
+    height: auto;
+    display: none;
+    margin-bottom: 1;
+}
+
+#results-list > ListItem {
+    background: #0f0f0f;
+}
+
+#results-list > ListItem.-highlight {
+    color: #A277FF;
+}
+
+#results-list:focus > ListItem.-highlight {
+    color: #A277FF;
+}
+
+#results-list > ListItem.-hovered {
+    color: #915489;
+}
+
+ResultItem {
+    height: auto;
+    padding: 0 0 0 3;
+    margin-bottom: 1;
+}
+
+.card-meta {
+    height: auto;
+    padding: 0 1;
+    background: #0f0f0f;
+}
+
+.card-title {
+    background: #0f0f0f;
+}
+
+.card-channel {
+    color: $text-disabled;
+    background: #0f0f0f;
+    overflow: hidden;
+}
+
+CommandPalette, CommandScreen {
+    align: center middle;
+    padding: 0;
+    background: #000000 60%;
+}
+CommandScreen #--heading {
+    padding: 0 2;
+    height: 1;
+}
+CommandPalette > Vertical, CommandScreen > Vertical {
+    margin: 0;
+    offset: 0 -3;
+    width: 50;
+    height: auto;
+    max-height: 90%;
+    border: solid $primary 40%;
+    padding: 0;
+    background: $panel;
+}
+CommandPalette #--input, CommandScreen #--input {
+    border: none;
+    padding: 0 2;
+}
+CommandPalette SearchIcon, CommandScreen SearchIcon {
+    display: none;
+}
+CommandPalette #--results, CommandScreen #--results {
+    border: none;
+    padding: 0;
+}
+CommandInput {
+    padding-left: 1;
+}
+CommandList > .option-list--option {
+    text-style: none;
+}
+CommandList > .option-list--option-highlighted,
+CommandList:focus > .option-list--option-highlighted {
+    color: #0f0f0f;
+    background: #A277FF;
+    text-style: none;
+}
+
+#welcome-topright {
+    dock: top;
+    height: 1;
+    text-align: right;
+    padding: 0 1;
+    color: #b0b0b0;
+    display: none;
+}
+#welcome-bottomright {
+    dock: bottom;
+    height: 1;
+    text-align: right;
+    padding: 0 1;
+    color: #b0b0b0;
+    display: none;
+}
+#main-content.landing-mode #sidebar,
+#main-content.landing-mode #results-focus,
+#main-content.landing-mode #radio-filter-hint,
+#main-content.landing-mode #radio-area,
+#main-content.landing-mode #rs-switcher {
+    display: none;
+}
+#main-content.landing-mode #welcome-topright,
+#main-content.landing-mode #welcome-bottomright {
+    display: block;
+}
+#main-content.landing-mode.landing-playing #sidebar {
+    display: block;
+}
+
+#radio-filter-hint {
+    height: 1;
+    content-align: center middle;
+    display: none;
+    margin-bottom: 1;
+}
+#radio-area {
+    height: 1fr;
+    display: none;
+    margin: 0 0 1 0;
+    align: center top;
+}
+#radio-list {
+    width: 94;
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+#radio-list:focus {
+    background-tint: transparent;
+}
+#radio-list:focus > .datatable--cursor {
+    background: #A277FF;
+    color: #0f0f0f;
+}
+#radio-list > .datatable--cursor {
+    background: transparent;
+    color: #808080;
+}
+#radio-list > .datatable--header {
+    height: 1;
+    background: transparent;
+    color: #606060;
+}
+#radio-list > .datatable--header-hover {
+    background: transparent;
+    color: #606060;
+}
+#radio-switcher {
+    height: 1fr;
+    width: 100%;
+}
+#rx-loading {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#rx-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #A277FF;
+    text-align: center;
+}
+#rx-loading > Static {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#rx-empty {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#rx-empty > Static {
+    width: auto;
+    height: 1;
+    color: #505050;
+    text-align: center;
+}
+#rx-content {
+    height: 1fr;
+    width: 100%;
+    align: center top;
+}
+
+#main-content.following-mode #sidebar {
+    display: block;
+}
+#main-content.following-mode #sidebar-focus {
+    display: block;
+}
+
+#main-content.watchlist-mode #sidebar {
+    display: block;
+}
+#main-content.watchlist-mode #sidebar-focus {
+    display: block;
+}
+
+#sc-home {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-size: 0 0;
+    display: none;
+    background: #0f0f0f;
+    align: center middle;
+}
+#following-area {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #0f0f0f;
+    layout: horizontal;
+    align: left top;
+    overflow-y: hidden;
+}
+#fs-left {
+    width: 30;
+    height: 100%;
+    background: #0f0f0f;
+    border-right: solid #2a2a2a;
+    padding: 0;
+}
+#fs-left-header {
+    padding: 0 1;
+    background: #0f0f0f;
+    border-bottom: solid #1e1e1e;
+}
+#fs-left-list {
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+    color: #808080;
+    overflow-x: hidden;
+}
+#fs-left-list:focus {
+    background-tint: transparent;
+}
+#fs-left-list:focus > .datatable--cursor {
+    background: #A277FF;
+    color: #0f0f0f;
+}
+#fs-left-list > .datatable--cursor {
+    background: transparent;
+    color: #808080;
+}
+#fs-left-list.-pending-cursor:focus > .datatable--cursor {
+    background: #ff4444;
+    color: #0f0f0f;
+}
+#fs-search-row {
+    height: 1;
+    layout: horizontal;
+    align: center middle;
+    margin-bottom: 1;
+    padding: 0 1;
+}
+#fs-search-prefix {
+    width: 3;
+    height: 1;
+    color: #404040;
+}
+#fs-search-prefix.-active {
+    color: #A277FF;
+}
+#fs-search {
+    width: 1fr;
+    height: 1;
+    border: none;
+    background: transparent;
+    color: #505050;
+    padding: 0;
+}
+#fs-search:focus {
+    border: none;
+    background: transparent;
+    color: #edecee;
+}
+#fs-center {
+    width: 1fr;
+    height: 100%;
+    background: #0f0f0f;
+    padding: 0;
+}
+#fs-center-header-row {
+    height: 2;
+    width: 100%;
+    padding: 0 1;
+    border-bottom: solid #1e1e1e;
+}
+#fs-center-header {
+    width: 1fr;
+    height: 1;
+}
+#feed-list {
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+#feed-list:focus {
+    background-tint: transparent;
+}
+#feed-list > ListItem {
+    height: auto;
+    padding: 0 1;
+    margin-bottom: 1;
+    background: transparent;
+}
+#feed-list > ListItem > Vertical {
+    height: auto;
+}
+#feed-list:focus > ListItem.-highlight .ft-title {
+    color: #A277FF;
+}
+#feed-list:focus > ListItem.-highlight .ft-channel {
+    color: #7A5CC0;
+}
+#feed-list:focus > ListItem.-highlight .ft-stats {
+    color: #5A4090;
+}
+#feed-list > ListItem.ft-consumed-item {
+    color: #404040;
+}
+#fs-center-switcher {
+    width: 100%;
+    height: 1fr;
+}
+#feed-loading {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#feed-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #A277FF;
+    text-align: center;
+}
+#feed-loading > Static {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#feed-empty {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#feed-empty > Static {
+    width: auto;
+    height: 1;
+    color: #505050;
+    text-align: center;
+}
+
+#sc-home .ft-title,
+#sc-home .ft-channel,
+#sc-home .ft-stats {
+    background: transparent;
+}
+#sc-home .ft-title {
+    color: #edecee;
+}
+#sc-home .ft-title.ft-consumed {
+    color: #505050;
+}
+#sc-home .ft-channel {
+    color: #606060;
+}
+#sc-home .ft-stats {
+    color: #404040;
+}
+#artist-profile {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #0f0f0f;
+    padding: 1 2;
+    overflow-y: auto;
+    scrollbar-size: 0 0;
+}
+#ap-scroll {
+    width: 100%;
+    height: auto;
+}
+#ap-browsing {
+    display: none;
+    height: 1;
+    margin-bottom: 1;
+}
+.compact #ap-browsing {
+    display: block;
+}
+#ap-browsing-sep {
+    display: none;
+}
+.compact #ap-browsing-sep {
+    display: block;
+}
+.compact #ap-header {
+    display: none;
+}
+.compact #ap-sep {
+    display: none;
+}
+#ap-header {
+    height: auto;
+    layout: horizontal;
+    margin-bottom: 1;
+}
+#ap-avatar {
+    width: 22;
+    height: 9;
+    margin-right: 2;
+}
+#ap-info {
+    width: 1fr;
+    height: auto;
+}
+#sc-home .ap-field-row {
+    height: auto;
+    layout: horizontal;
+}
+#sc-home .ap-field-label {
+    width: 15;
+    color: #edecee;
+}
+#ap-name {
+    color: #edecee;
+}
+#ap-location {
+}
+#ap-meta {
+    height: 1;
+}
+#ap-desc {
+    max-height: 4;
+    overflow: hidden;
+    margin-top: 1;
+}
+#sc-home .ap-section-label {
+    height: 1;
+    color: #edecee;
+    margin-top: 0;
+    margin-bottom: 1;
+}
+#sc-home .ap-chip-row {
+    height: 1;
+    layout: horizontal;
+    overflow-x: auto;
+    scrollbar-size: 0 0;
+    margin-bottom: 1;
+    margin-top: 0;
+}
+#sc-home .ap-chip-row > Button.ap-chip {
+    height: 1;
+    min-width: 0;
+    padding: 0 2;
+    border: none;
+    background: #1e1e1e;
+    color: #808080;
+    text-style: none;
+    margin-right: 1;
+}
+#sc-home .ap-chip-row > Button.ap-chip:focus {
+    background: #A277FF;
+    color: black;
+    text-style: bold;
+}
+#ap-tab-section {
+    height: 2;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#ap-tab-labels {
+    height: 1;
+}
+#ap-underline-row {
+    height: 1;
+    color: #a277ff;
+}
+#ap-track-list {
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+#ap-track-list:focus {
+    background-tint: transparent;
+}
+#ap-track-list:focus > .datatable--cursor {
+    background: #A277FF;
+    color: #0f0f0f;
+}
+#ap-track-list > .datatable--cursor {
+    background: transparent;
+}
+#sc-home .ap-sep {
+    height: 1;
+    color: #303030;
+    margin-top: 1;
+    margin-bottom: 0;
+}
+#sch-center {
+    width: 85;
+    height: auto;
+    background: #0f0f0f;
+}
+#sch-split {
+    height: auto;
+    layout: vertical;
+}
+#sch-left {
+    width: 100%;
+    height: auto;
+}
+#sch-right {
+    width: 100%;
+    height: auto;
+}
+.sch-wide #sch-center {
+    width: auto;
+    max-width: 170;
+    min-width: 85;
+}
+.sch-wide #sch-split {
+    layout: horizontal;
+}
+.sch-wide #sch-left {
+    width: 1fr;
+}
+.sch-wide #sch-right {
+    width: 1fr;
+}
+.sch-wide #sch-first-sep {
+    display: none;
+}
+.sch-wide.sch-sidebar-active #sch-split {
+    layout: vertical;
+}
+.sch-wide.sch-sidebar-active #sch-right {
+    display: none;
+}
+.sch-wide.sch-sidebar-active #sch-left {
+    width: 85;
+    height: auto;
+}
+.sch-wide.sch-sidebar-active #sch-center {
+    width: 85;
+    max-width: 85;
+    min-width: 85;
+}
+.sch-narrow #sch-split {
+    layout: vertical;
+}
+.sch-narrow #sch-right {
+    display: none;
+}
+.sch-narrow #sch-left {
+    width: 85;
+    height: auto;
+}
+.sch-narrow #sch-center {
+    width: 85;
+    max-width: 85;
+    min-width: 85;
+}
+.sch-genre-row {
+    height: auto;
+    margin-bottom: 1;
+    padding: 0;
+    align: left middle;
+}
+.sch-genre-row > Button.sch-chip {
+    height: 1;
+    min-width: 0;
+    padding: 0 1;
+    margin: 0 1 0 0;
+    border: none;
+    background: #1e1e1e;
+    color: #808080;
+    text-style: none;
+}
+.sch-genre-row > Button.sch-chip:focus {
+    background: #a277ff;
+    color: black;
+    text-style: bold;
+}
+.sch-header-row {
+    height: 1;
+    width: 100%;
+    margin-bottom: 0;
+}
+.sch-header-left {
+    width: 1fr;
+    height: 1;
+}
+.sch-header-right {
+    width: auto;
+    height: 1;
+    color: #b0b0b0;
+    text-align: right;
+}
+#sch-recent-list {
+    height: auto;
+    max-height: 4;
+    scrollbar-size: 0 0;
+    overflow-y: scroll;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    margin-top: 1;
+}
+#sch-recent-list:focus {
+    background-tint: transparent;
+}
+#sch-recent-list > ListItem {
+    background: transparent;
+    padding: 0;
+    height: 1;
+}
+#sch-recent-list > ListItem > Static {
+    width: 100%;
+    padding: 0;
+}
+#sch-following-content,
+#sch-liked-content {
+    height: auto;
+    padding: 0;
+    margin-top: 1;
+}
+.sch-sep {
+    height: 1;
+    color: #2a2a2a;
+    margin-top: 1;
+    margin-bottom: 0;
+}
+.sch-hint {
+    height: 1;
+    color: #606060;
+    text-align: center;
+    margin-top: 1;
+    width: 100%;
+}
+#sch-trending-header {
+    height: auto;
+}
+#sch-trending-label {
+    width: auto;
+}
+#chip-spinner {
+    width: auto;
+}
+
+#liked-area {
+    width: 110;
+    height: 100%;
+    background: #0f0f0f;
+    display: none;
+}
+#ls-keybind-bar {
+    height: 1;
+    text-align: left;
+    padding: 0 1;
+    color: #b0b0b0;
+    margin-bottom: 1;
+}
+#ls-section-header {
+    height: 1;
+    color: #edecee;
+    padding: 0 0;
+    margin-bottom: 1;
+}
+#ls-search-row {
+    height: 1;
+    layout: horizontal;
+    margin-bottom: 1;
+    padding: 0 0;
+}
+#ls-search-prefix {
+    width: 3;
+    height: 1;
+    color: #404040;
+}
+#ls-search-prefix.-active {
+    color: #A277FF;
+}
+#ls-search {
+    width: 1fr;
+    height: 1;
+    border: none;
+    background: transparent;
+    color: #505050;
+    padding: 0;
+}
+#ls-search:focus {
+    border: none;
+    background: transparent;
+    color: #edecee;
+}
+#ls-list {
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+#ls-list:focus {
+    background: #0f0f0f;
+    background-tint: transparent;
+}
+#ls-list:focus > .datatable--cursor {
+    color: #0f0f0f;
+    background: #A277FF;
+}
+#ls-list > .datatable--cursor {
+    background: transparent;
+    color: initial;
+}
+#ls-list.-buffer-cursor:focus > .datatable--cursor {
+    background: #ff4444;
+    color: #0f0f0f;
+}
+#ls-switcher {
+    width: 100%;
+    height: 1fr;
+}
+#ls-content {
+    height: 100%;
+}
+#ls-empty {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#ls-empty > Static {
+    width: auto;
+    height: 1;
+    color: #505050;
+    text-align: center;
+}
+#ls-loading {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#ls-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #A277FF;
+    text-align: center;
+}
+#ls-loading > Static {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+.sch-wide #liked-area {
+    width: auto;
+    max-width: 180;
+    min-width: 110;
+}
+
+/* ── WatchlistScreen ───────────────────────────────────────── */
+
+#watchlist-screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+#wl-keybind-bar {
+    height: 1;
+    text-align: left;
+    padding: 0 0;
+    color: #b0b0b0;
+    margin-bottom: 1;
+}
+#wl-section-header {
+    height: 1;
+    color: #edecee;
+    padding: 0 0;
+    margin-bottom: 1;
+}
+#wl-search-row {
+    height: 1;
+    layout: horizontal;
+    margin-bottom: 1;
+    padding: 0 0;
+}
+#wl-search-prefix {
+    width: 3;
+    height: 1;
+    color: #404040;
+}
+#wl-search-prefix.-active {
+    color: #A277FF;
+}
+#wl-search {
+    width: 1fr;
+    height: 1;
+    border: none;
+    background: transparent;
+    color: #505050;
+    padding: 0;
+}
+#wl-search:focus {
+    border: none;
+    background: transparent;
+    color: #edecee;
+}
+#wl-list {
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+#wl-list:focus {
+    background: #0f0f0f;
+    background-tint: transparent;
+}
+#wl-list:focus > .datatable--cursor {
+    color: #0f0f0f;
+    background: #A277FF;
+}
+#wl-list > .datatable--cursor {
+    background: transparent;
+    color: initial;
+}
+#wl-list.-pending-cursor:focus > .datatable--cursor {
+    background: #ff4444;
+    color: #0f0f0f;
+}
+#wl-switcher {
+    width: 100%;
+    height: 1fr;
+}
+#wl-content {
+    align: left top;
+    height: 100%;
+}
+#wl-cover {
+    width: 40;
+    height: 100%;
+    padding: 0 2 0 1;
+    align-horizontal: left;
+    background: #0f0f0f;
+    border-right: solid #303030;
+}
+#wl-poster {
+    width: 100%;
+    height: auto;
+}
+#wl-meta {
+    width: 100%;
+    height: auto;
+    padding-top: 1;
+}
+#wl-list-panel {
+    width: 1fr;
+    height: 100%;
+    align-horizontal: center;
+}
+#wl-list-inner {
+    width: auto;
+    min-width: 86;
+    max-width: 88;
+    height: 1fr;
+}
+#wl-empty {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#wl-empty > Static {
+    width: auto;
+    height: 1;
+    color: #505050;
+    text-align: center;
+}
+#wl-sep {
+    height: 1;
+    color: #404040;
+}
+#watchlist-screen.compact #wl-cover {
+    display: none;
+}
+#wl-mini {
+    display: none;
+    width: 100%;
+    align: left bottom;
+    height: auto;
+}
+#watchlist-screen.compact #wl-mini {
+    display: block;
+    dock: bottom;
+    border-top: solid #404040;
+    padding: 0 2;
+}
+#wl-mini-poster {
+    width: 8;
+    height: auto;
+}
+#wl-mini-meta {
+    width: 1fr;
+    height: auto;
+    padding-left: 2;
+}
+#wl-mini-title {
+    height: 1;
+    color: #edecee;
+    text-style: bold;
+}
+#wl-mini-rating {
+    height: 1;
+    color: #b0b0b0;
+}
+#wl-mini-genres {
+    height: 1;
+    color: #606060;
+}
+
+/* ── TVHomeView ────────────────────────────────────────────── */
+
+#tv-home {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+    align: center middle;
+}
+#tv-center {
+    width: 85;
+    height: auto;
+}
+#tv-watchlist-section,
+#tv-rec-section,
+#tv-trending-section,
+#tv-popular-section {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+#tv-rec-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+.tv-section-header {
+    height: 1;
+    width: 100%;
+    color: #edecee;
+    margin-bottom: 0;
+}
+.tv-section-label {
+    width: 1fr;
+    height: 1;
+}
+.tv-section-hint {
+    width: auto;
+    height: 1;
+    color: #b0b0b0;
+    text-align: right;
+}
+.tv-watchlist-text {
+    height: auto;
+    width: 100%;
+    color: #b0b0b0;
+    margin-top: 1;
+}
+.tv-chip-row {
+    width: 100%;
+    height: auto;
+    layout: horizontal;
+    align: left middle;
+    overflow-x: auto;
+    scrollbar-size: 0 0;
+    margin-top: 1;
+}
+.tv-chip-row > .tv-chip {
+    height: 2;
+    min-width: 0;
+    padding: 0 1;
+    margin: 0 1 0 0;
+    border: none;
+    background: #1e1e1e;
+    color: #808080;
+    text-style: none;
+    text-align: left;
+    content-align: left middle;
+}
+.tv-chip-row > .tv-chip:focus {
+    background: #a277ff;
+    color: black;
+    text-style: bold;
+}
+.tv-section-hidden {
+    display: none;
+}
+.compact #tv-popular-sep {
+    display: none;
+}
+.compact #tv-popular-section {
+    display: none;
+}
+
+/* ── DirectoryModal ─────────────────────────────────────────── */
+
+#di-box {
+    width: 60;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#di-heading {
+    text-style: bold;
+    margin-bottom: 1;
+}
+#di-input {
+    width: 100%;
+    height: 1;
+    border: none;
+    background: transparent;
+}
+#di-status {
+    height: 1;
+}
+#di-hint {
+    height: 1;
+    margin-top: 1;
+}
+
+/* ── KeyReferenceModal ──────────────────────────────────────── */
+
+#kr-box {
+    width: 106;
+    height: auto;
+    max-height: 90%;
+    padding: 1 2;
+    background: $panel;
+}
+#kr-title {
+    width: 100%;
+    height: 1;
+    margin-bottom: 1;
+}
+#kr-panels {
+    height: auto;
+}
+#kr-col-left, #kr-col-right {
+    width: 1fr;
+    height: auto;
+}
+#kr-footer {
+    width: 100%;
+    height: 1;
+    margin-top: 1;
+}
+
+/* ── QualitySelector ─────────────────────────────────────────── */
+
+#qs-box {
+    width: 44;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#qs-heading {
+    padding: 0 0 1 0;
+}
+#qs-list {
+    padding: 0;
+    margin-bottom: 1;
+    border: none;
+    scrollbar-size: 0 0;
+}
+#qs-list > .option-list--option {
+    background: $panel;
+}
+#qs-list > .option-list--option-highlighted,
+#qs-list:focus > .option-list--option-highlighted {
+    color: #0f0f0f;
+    background: #A277FF;
+    text-style: not bold;
+}
+#qs-hint {
+    padding: 0 2 1 2;
+    color: $text-disabled;
+}
+
+/* ── HotswapToggle ─────────────────────────────────────────── */
+
+#hs-box {
+    width: 44;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#hs-heading {
+    padding: 0 0 1 0;
+}
+#hs-list {
+    padding: 0;
+    margin-bottom: 1;
+    border: none;
+    scrollbar-size: 0 0;
+}
+#hs-list > .option-list--option {
+    background: $panel;
+}
+#hs-list > .option-list--option-highlighted,
+#hs-list:focus > .option-list--option-highlighted {
+    color: #0f0f0f;
+    background: #A277FF;
+    text-style: not bold;
+}
+#hs-hint {
+    padding: 0 2 1 2;
+    color: $text-disabled;
+}
+
+/* ── EpisodeRangeModal ──────────────────────────────────────── */
+
+#er-box {
+    width: 72;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#er-heading {
+    padding: 0 0 1 0;
+    text-style: bold;
+}
+
+/* Picker row: From: S01E01  Till: S02E03 */
+#er-pickers {
+    height: auto;
+    margin-bottom: 1;
+}
+#er-from-label, #er-till-label {
+    width: auto;
+    padding: 0 0 0 0;
+    color: $text-disabled;
+}
+#er-from-picker, #er-till-picker {
+    width: auto;
+    padding: 0 1;
+    border: none;
+    background: transparent;
+    color: $text;
+}
+#er-box.zone-pickers #er-from-picker:focus,
+#er-box.zone-pickers #er-till-picker:focus {
+    color: black;
+    background: #A277FF;
+    text-style: bold;
+}
+
+/* Quality chips */
+#er-quality-label {
+    padding: 0 0 0 0;
+}
+#er-quality-chips {
+    height: auto;
+    margin-top: 1;
+    margin-bottom: 1;
+}
+.quality-chip {
+    width: auto;
+    height: 1;
+    border: none;
+    background: #1c1c22;
+    color: #606060;
+    padding: 0 2;
+    margin: 0 1;
+    min-width: 0;
+}
+.quality-chip.active {
+    color: #0f0f0f;
+    background: #d0d0d0;
+    text-style: bold;
+}
+
+#er-quality-chips.zone-active .quality-chip.active {
+    color: black;
+    background: #A277FF;
+    text-style: bold;
+}
+/* Status line */
+#er-status {
+    height: 1;
+}
+#er-hint {
+    padding: 1 0 0 0;
+    color: $text-disabled;
+}
+
+/* ── SeasonJumpModal ────────────────────────────────────────── */
+
+#sj-box {
+    width: 48;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+
+#sj-row {
+    height: auto;
+}
+
+#sj-label {
+    width: auto;
+    padding: 0 0 0 0;
+    color: $text-disabled;
+}
+
+#sj-picker {
+    width: auto;
+    padding: 0 1;
+    border: none;
+    background: transparent;
+    color: $text;
+}
+
+#sj-picker:focus {
+    color: black;
+    background: #A277FF;
+    text-style: bold;
+}
+
+#sj-hint {
+    padding: 1 0 0 0;
+    color: $text-disabled;
+}
+
+/* ── TrendingRegionSelector ──────────────────────────────────── */
+
+#trs-box {
+    width: 44;
+    height: auto;
+    max-height: 80%;
+    padding: 1 2;
+    background: $panel;
+}
+#trs-heading {
+    padding: 0 0 1 0;
+}
+#trs-list {
+    padding: 0;
+    margin-bottom: 1;
+    border: none;
+    scrollbar-size: 0 0;
+}
+#trs-list > .option-list--option {
+    background: $panel;
+}
+#trs-list > .option-list--option-highlighted,
+#trs-list:focus > .option-list--option-highlighted {
+    color: #0f0f0f;
+    background: #A277FF;
+    text-style: not bold;
+}
+#trs-hint {
+    padding: 0 2 1 2;
+    color: $text-disabled;
+}
+
+/* ── ThumbnailModal ──────────────────────────────────────────── */
+
+#thumb-box {
+    width: auto;
+    height: auto;
+    background: $panel;
+    padding: 1 2;
+}
+#thumb-img {
+    width: 100%;
+    height: auto;
+}
+#thumb-loading {
+    height: auto;
+    width: 100%;
+    align: left middle;
+}
+#thumb-loading.hidden {
+    display: none;
+}
+#thumb-loading-row {
+    height: auto;
+}
+#thumb-spinner {
+    width: auto;
+    height: 1;
+    color: #707070;
+    text-align: center;
+}
+#thumb-loading-label {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#thumb-title {
+    margin-top: 1;
+}
+#thumb-meta {
+    color: $text-disabled;
+}
+#thumb-hint {
+    margin-top: 1;
+    color: $text-disabled;
+}
+
+/* ── TVThumbnailModal ─────────────────────────────────────────── */
+
+#tv-thumb-box {
+    width: auto;
+    height: auto;
+    background: $panel;
+    padding: 1 2;
+}
+#tv-thumb-panels {
+    width: 100%;
+    height: auto;
+}
+#tv-thumb-poster-col{
+    height: auto;
+}
+#tv-thumb-img {
+    width: 100%;
+    height: auto;
+}
+#tv-thumb-loading {
+    height: auto;
+    width: 100%;
+    align: left middle;
+}
+#tv-thumb-loading-row {
+    height: auto;
+}
+#tv-thumb-loading.hidden {
+    display: none;
+}
+#tv-thumb-spinner {
+    width: auto;
+    height: 1;
+    color: #707070;
+    text-align: center;
+}
+#tv-thumb-loading-label {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#tv-thumb-meta-col {
+    width: 1fr;
+    height: auto;
+    padding: 0 2 0 4;
+}
+#tv-thumb-title {
+    margin-bottom: 0;
+}
+#tv-thumb-rating {
+    color: $text-disabled;
+    margin-top: 0;
+}
+#tv-thumb-genres {
+    color: $text-disabled;
+    margin-top: 0;
+}
+#tv-thumb-overview {
+    margin-top: 1;
+    max-height: 14;
+    overflow-y: auto;
+    color: #808080;
+}
+#tv-thumb-hint {
+    margin-top: 1;
+    color: $text-disabled;
+}
+
+/* ── EpisodeThumbnailModal ──────────────────────────────────────── */
+
+#ep-thumb-box {
+    width: auto;
+    height: auto;
+    background: $panel;
+    padding: 1 2;
+}
+#ep-thumb-panels {
+    width: 100%;
+    height: auto;
+}
+#ep-thumb-img-col {
+    height: auto;
+}
+#ep-thumb-img {
+    width: 100%;
+    height: auto;
+}
+#ep-thumb-loading {
+    height: auto;
+    width: 100%;
+    align: left middle;
+}
+#ep-thumb-loading-row {
+    height: auto;
+}
+#ep-thumb-loading.hidden {
+    display: none;
+}
+#ep-thumb-spinner {
+    width: auto;
+    height: 1;
+    color: #707070;
+    text-align: center;
+}
+#ep-thumb-loading-label {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#ep-thumb-meta-col {
+    width: 1fr;
+    height: auto;
+    padding: 0 2 0 4;
+}
+#ep-thumb-title {
+    margin-bottom: 0;
+}
+#ep-thumb-series {
+    color: $text-disabled;
+    margin-top: 0;
+}
+#ep-thumb-meta {
+    color: $text-disabled;
+    margin-top: 0;
+}
+#ep-thumb-overview {
+    margin-top: 1;
+    max-height: 5;
+    overflow-y: auto;
+    color: #808080;
+}
+#ep-thumb-hint {
+    margin-top: 1;
+    color: $text-disabled;
+}
+
+/* ── URLInputModal ───────────────────────────────────────────── */
+
+#url-box {
+    width: 60;
+    height: auto;
+    background: $panel;
+    padding: 1 2;
+}
+#url-heading {
+    text-style: bold;
+    margin-bottom: 1;
+}
+#url-input {
+    width: 100%;
+    height: 1;
+    border: none;
+    background: transparent;
+}
+#url-status {
+    height: 1;
+}
+#url-hint {
+    height: 1;
+    margin-top: 1;
+}
+
+/* ── SearchModal ─────────────────────────────────────────────── */
+
+SearchModal .search-heading {
+    height: 1;
+    text-style: bold;
+    color: white;
+    margin-bottom: 1;
+}
+#search-box {
+    width: 52;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#search-input {
+    width: 100%;
+    height: 1;
+    border: none;
+    background: transparent;
+}
+#search-hint {
+    height: 1;
+    margin-top: 1;
+    text-align: left;
+}
+#search-chips {
+    height: auto;
+    margin-top: 1;
+}
+.search-chip {
+    width: auto;
+    height: 1;
+    border: none;
+    background: #1c1c22;
+    color: #606060;
+    padding: 0 2;
+    margin: 0 1;
+    min-width: 0;
+}
+.search-chip.active {
+    color: #0f0f0f;
+    background: #d0d0d0;
+    text-style: bold;
+}
+#search-loader {
+    width: 100%;
+    height: 3;
+}
+#search-loader.hidden {
+    display: none;
+}
+
+/* ── TMDbKeyInputModal ──────────────────────────────────────── */
+
+#tmdb-box {
+    width: 60;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#tmdb-heading {
+    text-style: bold;
+    margin-bottom: 1;
+}
+#tmdb-input-row {
+    height: 1;
+}
+#tmdb-input {
+    width: 48;
+    height: 1;
+    border: none;
+    background: transparent;
+}
+#tmdb-spinner {
+    width: 2;
+    margin-left: 1;
+    height: 1;
+}
+#tmdb-status {
+    height: 1;
+    margin-top: 1;
+}
+#tmdb-hint {
+    height: 1;
+    margin-top: 1;
+}
+
+/* ── ManifestUrlModal ─────────────────────────────────────── */
+
+#url-box {
+    width: 80;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+#url-heading {
+    text-style: bold;
+    margin-bottom: 1;
+}
+#url-input-row {
+    height: 1;
+    margin-top: 1;
+}
+#url-input {
+    width: 70;
+    height: 1;
+    border: none;
+}
+#url-spinner {
+    width: 2;
+    height: 1;
+    margin-left: 1;
+}
+#url-status {
+    height: 1;
+    margin-top: 1;
+}
+#url-hint {
+    height: 1;
+    margin-top: 1;
+}
+
+/* ── QueueModal ──────────────────────────────────────────────── */
+
+#qm-box {
+    width: 80;
+    height: 65%;
+    max-height: 80%;
+    padding: 1 2 2 2;
+    background: $panel;
+}
+#qm-heading {
+    width: 100%;
+    height: 1;
+    padding: 0 1;
+    margin-bottom: 1;
+}
+#qm-hd-left {
+    width: auto;
+    height: 1;
+}
+#qm-hd-right {
+    width: 1fr;
+    height: 1;
+    text-align: right;
+}
+#qm-pb-heading {
+    height: 1;
+    padding: 0 1;
+    color: $text-disabled;
+}
+#qm-playback-list {
+    height: 1fr;
+    background: transparent;
+    scrollbar-size: 0 0;
+    margin: 0 1;
+    border: none;
+}
+#qm-playback-list .datatable--cursor {
+    color: #0f0f0f;
+    background: #A277FF;
+}
+#qm-playback-list.qm-sole .datatable--cursor {
+    background: transparent;
+    color: #b0b0b0;
+}
+#qm-footer {
+    dock: bottom;
+    height: 2;
+    padding: 0 1;
+    color: $text-disabled;
+}
+
+/* ── CollectionBrowser ───────────────────────────────────────── */
+
+#cb-box {
+    width: 130;
+    height: 65%;
+    max-height: 80%;
+    padding: 1 2 2 2;
+    background: $panel;
+}
+#cb-panels {
+    height: 1fr;
+}
+#cb-left-panel {
+    width: 50;
+    min-width: 36;
+    height: 1fr;
+    border-right: solid #303030;
+    padding-right: 1;
+}
+#cb-right-panel {
+    width: 1fr;
+    height: 1fr;
+    padding-left: 1;
+}
+#cb-header {
+    padding: 0 0 1 0;
+    text-style: none;
+}
+#cb-loading {
+    height: 1fr;
+    width: 100%;
+    align: center middle;
+}
+#cb-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #707070;
+    text-align: center;
+}
+#cb-loading > Label {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#cb-collection-name {
+    dock: top;
+    height: 2;
+    color: #707070;
+    padding: 0 0 1 0;
+}
+CollectionBrowser DataTable {
+    height: 1fr;
+    overflow-x: hidden;
+    scrollbar-size: 0 0;
+    background: transparent;
+}
+CollectionBrowser DataTable:focus {
+    border: none;
+    background: transparent;
+}
+#cb-footer {
+    dock: bottom;
+    height: 2;
+    padding: 1 0 0 1;
+    color: $text-disabled;
+    text-align: left;
+}
+
+/* ── RadioFilterModal ────────────────────────────────────────── */
+
+#fi-wrapper {
+    width: 90;
+    height: auto;
+    max-height: 85%;
+    background: $panel;
+    padding: 0 2 1 2;
+}
+
+#fi-box {
+    layout: horizontal;
+    height: auto;
+    padding: 0;
+}
+
+/* left panel */
+#fi-left {
+    width: 36;
+    min-width: 36;
+    height: auto;
+    min-height: 16;
+    padding: 1 2 1 2;
+    border-right: solid $surface;
+}
+
+#fi-heading {
+    width: 100%;
+    height: 1;
+    margin-bottom: 1;
+    layout: horizontal;
+}
+#fi-hd-left  { width: auto; height: 1; }
+#fi-hd-right { width: 1fr; height: 1; text-align: right; }
+
+RadioFilterModal .fi-field-label {
+    height: 1;
+    color: $text;
+    margin-top: 1;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* plain name input */
+#fi-name {
+    border: none;
+    background: transparent;
+    height: 1;
+    padding: 0;
+    margin-bottom: 0;
+}
+#fi-name:focus { border: none; }
+
+/* chip input row */
+RadioFilterModal .chip-input-wrap {
+    height: 1;
+    background: transparent;
+    padding: 0;
+    border: none;
+    layout: horizontal;
+}
+RadioFilterModal .chip-input-wrap Input {
+    border: none;
+    background: transparent;
+    height: 1;
+    padding: 0;
+    min-width: 4;
+    width: 1fr;
+}
+RadioFilterModal .chip-input-wrap Input:focus { border: none; background: transparent; }
+RadioFilterModal .chip-row { height: 1; width: auto; background: transparent; padding: 0; }
+
+/* suggestion dropdowns */
+RadioFilterModal .fi-suggest {
+    height: auto;
+    max-height: 6;
+    display: none;
+    background: transparent;
+    margin-bottom: 0;
+    border: none;
+    scrollbar-size: 0 0;
+}
+RadioFilterModal .fi-suggest > ListItem {
+    padding: 0 1;
+    height: 1;
+    background: transparent;
+}
+RadioFilterModal .fi-suggest > ListItem.-highlight {
+    color: #0f0f0f;
+    background: #A277FF;
+}
+
+/* footer */
+#fi-footer {
+    height: 1;
+    margin-top: 0;
+    padding: 0 2;
+    color: $text-disabled;
+}
+
+/* right panel */
+#fi-right {
+    width: 1fr;
+    height: auto;
+    padding: 1 2 1 2;
+}
+
+#fi-active-heading {
+    height: 1;
+    margin-bottom: 1;
+    layout: horizontal;
+}
+#fi-active-label  { width: auto; height: 1; }
+#fi-active-count  { width: 1fr; height: 1; text-align: right; }
+
+RadioFilterModal .fi-section-label {
+    height: 1;
+    color: $text-disabled;
+    margin-top: 1;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+RadioFilterModal .fi-chip-row {
+    height: 1;
+    width: 1fr;
+    layout: horizontal;
+    margin-top: 1;
+    overflow-x: auto;
+    scrollbar-size: 0 0;
+}
+RadioFilterModal .fi-chip-row > ChipButton {
+    height: 1;
+    width: auto;
+    padding: 0 1;
+}
+RadioFilterModal .fi-chip-row > ChipButton:focus {
+    text-style: reverse;
+}
+
+/* ── TVSeriesView ────────────────────────────────────────── */
+#tvs-root {
+    width: 100%;
+    height: 1fr;
+    background: #0f0f0f;
+}
+#tvs-scroll {
+    width: 100%;
+    height: 1fr;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+    padding: 1 2;
+}
+#tvs-browsing {
+    display: none;
+    height: 1;
+    margin-bottom: 1;
+}
+.compact #tvs-browsing {
+    display: block;
+}
+#tvs-browsing-sep {
+    display: none;
+}
+.compact #tvs-browsing-sep {
+    display: block;
+}
+.compact #tvs-header {
+    display: none;
+}
+.compact #tvs-sep {
+    display: none;
+}
+#tvs-header {
+    height: auto;
+    layout: horizontal;
+    margin-bottom: 1;
+}
+#tvs-poster {
+    width: auto;
+    height: 100%;
+    min-height: 10;
+}
+#tvs-meta {
+    width: 1fr;
+    height: auto;
+    padding-left: 2;
+}
+#tvs-title {
+    height: 1;
+    color: #edecee;
+    text-style: bold;
+}
+#tvs-rating {
+    height: 1;
+    color: #b0b0b0;
+}
+#tvs-genres {
+    height: 1;
+    color: #808080;
+    margin-bottom: 1;
+}
+#tvs-overview {
+    height: auto;
+    max-height: 6;
+    color: #808080;
+    overflow-y: hidden;
+}
+#tvs-root .ap-sep {
+    height: 1;
+    color: #404040;
+}
+#tvs-season-selector {
+    height: auto;
+    min-height: 2;
+    margin: 1 0 0 0;
+}
+#tvs-chip-row {
+    height: auto;
+    layout: horizontal;
+    align: left middle;
+    overflow-x: auto;
+    scrollbar-size: 0 0;
+}
+#tvs-chip-row > .season-chip {
+    height: 1;
+    min-width: 0;
+    padding: 0 1;
+    margin: 0 1 0 0;
+    border: none;
+    background: #1e1e1e;
+    color: #808080;
+    text-style: none;
+}
+#tvs-chip-row > .season-chip:focus {
+    background: #a277ff;
+    color: black;
+    text-style: bold;
+}
+#tvs-chip-row > .season-chip.active {
+    background: #a277ff;
+    color: black;
+    text-style: bold;
+}
+#tvs-episodes {
+    height: 1fr;
+    border: none;
+    scrollbar-size: 0 0;
+    background: #0f0f0f;
+}
+#tvs-episodes:focus {
+    background-tint: transparent;
+}
+#tvs-episodes:focus > .datatable--cursor {
+    background: #A277FF;
+    color: #0f0f0f;
+}
+#tvs-episodes > .datatable--cursor {
+    background: transparent;
+    color: initial;
+}
+#tvs-episode-desc {
+    dock: bottom;
+    height: 5;
+    color: #808080;
+    border-top: solid #404040;
+    width: 100%;
+    padding: 0 2 1 2;
+    margin-bottom: 1;
+}
+#tvs-keybind-bar {
+    dock: bottom;
+    height: 1;
+    padding: 0 2;
+    color: #b0b0b0;
+    text-align: right;
+}
+#tvs-switcher {
+    height: 1fr;
+    width: 100%;
+}
+#tvs-loading {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+    background: #0f0f0f;
+}
+#tvs-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #A277FF;
+    text-align: center;
+}
+#tvs-loading > Static {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+#tvs-loaded {
+    height: 1fr;
+    width: 100%;
+}
+#tvs-episodes-switcher {
+    height: 1fr;
+}
+#tvs-episodes-loading {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+}
+#tvs-episodes-loading > BrailleSpinner {
+    width: auto;
+    height: 1;
+    color: #A277FF;
+    text-align: center;
+}
+#tvs-episodes-loading > Static {
+    height: 1;
+    color: #707070;
+    text-align: center;
+    width: auto;
+}
+
+/* --- Notification Toast Overrides --- */
+Toast {
+    border: round #61d6ff;
+    padding: 0 1;
+    max-width: 43;
+    max-height: 5;
+    overflow: hidden;
+    background: $panel;
+    margin-top: 0;
+}
+Toast.-warning {
+    border: round $warning;
+}
+Toast.-error {
+    border: round $error;
+}
+ToastHolder {
+    background: transparent;
+    align-horizontal: right;
+}
+ToastRack {
+    padding: 0 2 1 0;
+    dock: bottom;
+    overflow-y: auto;
+}
