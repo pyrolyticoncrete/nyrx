@@ -44,7 +44,7 @@ exclude = ["tests*"]
 Homepage = "https://github.com/pyrolyticoncrete/nyrx"
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-xdist", "ruff", "mypy", "types-requests"]
+dev = ["pytest", "pytest-xdist", "pytest-asyncio", "ruff", "mypy", "types-requests"]
 
 [tool.ruff]
 target-version = "py312"
