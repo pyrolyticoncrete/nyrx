@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="https://pypi.org/project/nyrx/"><img src="https://img.shields.io/pypi/v/nyrx?color=a277ff&label=PyPI" alt="PyPI"></a>
-  <a href="https://pypi.org/project/nyrx/"><img src="https://img.shields.io/pypi/pyversions/nyrx?color=a277ff" alt="Python"></a>
   <a href="https://github.com/pyrolyticoncrete/nyrx/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/pyrolyticoncrete/nyrx?color=a277ff" alt="License"></a>
 </p>
 
@@ -195,7 +194,7 @@ Source-agnostic queue with management features like batch deletion, and move-to-
 
 Background downloads show speed and ETA with a live animation. Existing files are skipped automatically. Both download and playback widgets live in the sidebar: Soundcloud shows a braille waveform, Youtube displays progress and metadata, Radio shows the station name and live ICY titles, and TV displays episode details. Queue indicators sit below. When both downloads and playback are active, navigation keys let you move between widgets and cancel as needed.
 <p align="left">
-  <img src="https://raw.githubusercontent.com/pyrolyticoncrete/nyrx/main/screenshots/i.gif" alt="Now-playing widget and download progress" width="700">
+  <img src="https://raw.githubusercontent.com/pyrolyticoncrete/nyrx/main/screenshots/i.gif" alt="Now-playing widget and download progress" width="800">
 </p>
 
 **Thumbnails and Info**
