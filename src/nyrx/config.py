@@ -25,7 +25,7 @@ SETTINGS_PATH = CONFIG_DIR / "config.json"
 try:
     APP_VERSION = version("nyrx")
 except PackageNotFoundError:
-    APP_VERSION = "1.0.0"
+    APP_VERSION = "1.0.1"
 
 # --- FFmpeg / FFprobe binaries ---
 # Primary: static-ffmpeg (installed as project dependency via pyproject.toml).

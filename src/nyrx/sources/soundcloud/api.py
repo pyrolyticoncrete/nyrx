@@ -115,7 +115,7 @@ def ensure_client_id() -> bool:
             logger.info("ensure_client_id: validated successfully")
             return True
     except urllib.error.HTTPError as e:
-        if e.code == 403:
+        if e.code in (401, 403):
             logger.info("ensure_client_id: cached client_id invalid, refreshing")
             cid = refresh_client_id()
             if cid:
@@ -171,7 +171,7 @@ def _api_call(
             resp = urllib.request.urlopen(url, timeout=max(attempt_timeout, 0.1))
             return json.loads(resp.read())
         except urllib.error.HTTPError as e:
-            if e.code == 403:
+            if e.code in (401, 403):
                 logger.info(
                     "_api_call: 403 detected, refreshing client_id and retrying"
                 )
